@@ -1,0 +1,12 @@
+C:\Users\lucas\KBR\KBR.Domain\bin\Debug\net6.0\KBR.Domain.deps.json
+C:\Users\lucas\KBR\KBR.Domain\bin\Debug\net6.0\KBR.Domain.dll
+C:\Users\lucas\KBR\KBR.Domain\bin\Debug\net6.0\ref\KBR.Domain.dll
+C:\Users\lucas\KBR\KBR.Domain\bin\Debug\net6.0\KBR.Domain.pdb
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\KBR.Domain.csproj.AssemblyReference.cache
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\KBR.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\KBR.Domain.AssemblyInfoInputs.cache
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\KBR.Domain.AssemblyInfo.cs
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\KBR.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\KBR.Domain.dll
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\ref\KBR.Domain.dll
+C:\Users\lucas\KBR\KBR.Domain\obj\Debug\net6.0\KBR.Domain.pdb

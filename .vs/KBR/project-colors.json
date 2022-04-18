@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5207be86-c44a-44af-8314-75e5c91e5697": {
+      "ProjectGuid": "5207be86-c44a-44af-8314-75e5c91e5697",
+      "DisplayName": "KBR.Domain",
+      "ColorIndex": 0
+    },
+    "06de5ccb-9204-4071-ba16-842e2fb59d0c": {
+      "ProjectGuid": "06de5ccb-9204-4071-ba16-842e2fb59d0c",
+      "DisplayName": "KBR.Domain.Infra",
+      "ColorIndex": 1
+    },
+    "588e69b5-9fe5-497f-b4df-2a1f586504e7": {
+      "ProjectGuid": "588e69b5-9fe5-497f-b4df-2a1f586504e7",
+      "DisplayName": "KBR.Payment.Api",
+      "ColorIndex": 2
+    },
+    "0fe0eeea-5aeb-4c77-bbf6-01d4b476437f": {
+      "ProjectGuid": "0fe0eeea-5aeb-4c77-bbf6-01d4b476437f",
+      "DisplayName": "KBR.Domain.Api",
+      "ColorIndex": 3
+    },
+    "28b5d95e-e526-4c25-bda8-88bb00b3c56d": {
+      "ProjectGuid": "28b5d95e-e526-4c25-bda8-88bb00b3c56d",
+      "DisplayName": "KBR.Domain.Tests",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

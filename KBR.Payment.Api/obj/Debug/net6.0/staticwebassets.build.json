@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "odHe7pD1uWwl3XXupFg292KX7xB+kvcjFEPbEdYFE10=",
+  "Source": "KBR.Payment.Api",
+  "BasePath": "_content/KBR.Payment.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "56ty79JQ4mr21ey3rsw2eZHItb//j6V/c2FPUqhxYVg=",
+  "Source": "KBR.Domain.Api",
+  "BasePath": "_content/KBR.Domain.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

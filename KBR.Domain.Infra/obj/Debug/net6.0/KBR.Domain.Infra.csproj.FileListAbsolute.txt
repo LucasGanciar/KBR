@@ -1,0 +1,15 @@
+C:\Users\lucas\KBR\KBR.Domain.Infra\bin\Debug\net6.0\KBR.Domain.Infra.deps.json
+C:\Users\lucas\KBR\KBR.Domain.Infra\bin\Debug\net6.0\KBR.Domain.Infra.dll
+C:\Users\lucas\KBR\KBR.Domain.Infra\bin\Debug\net6.0\ref\KBR.Domain.Infra.dll
+C:\Users\lucas\KBR\KBR.Domain.Infra\bin\Debug\net6.0\KBR.Domain.Infra.pdb
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.csproj.AssemblyReference.cache
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.AssemblyInfoInputs.cache
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.AssemblyInfo.cs
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.csproj.CoreCompileInputs.cache
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.dll
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\ref\KBR.Domain.Infra.dll
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.pdb
+C:\Users\lucas\kbr\KBR.Domain.Infra\bin\Debug\net6.0\KBR.Domain.dll
+C:\Users\lucas\kbr\KBR.Domain.Infra\bin\Debug\net6.0\KBR.Domain.pdb
+C:\Users\lucas\KBR\KBR.Domain.Infra\obj\Debug\net6.0\KBR.Domain.Infra.csproj.CopyComplete
