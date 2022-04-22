@@ -28,12 +28,13 @@ namespace KBR.Controllers
             }
         }
 
-        [HttpGet("api/[Controller]/all")]
+        [HttpGet]
+        [Route("api/[Controller]/All")]
         public async ValueTask<ActionResult> GetAll()
         {
             try
             {
-                List<Order> orders = await orderRepository.GetAll();
+                List<Order> orders = orderRepository.GetAll();
                 return Ok(orders);
             }
             catch (Exception e)
@@ -48,6 +49,51 @@ namespace KBR.Controllers
             try
             {
                 Order order = await orderRepository.AddItem(item);
+                return Ok(order);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        [HttpPost]
+        [Route("api/[controller]/checkout")]
+        public async ValueTask<ActionResult> Checkout([FromBody] Order order)
+        {
+            try
+            {
+                Order checkout = await orderRepository.Checkout(order);
+                return Ok(checkout);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        [HttpPost]
+        [Route("api/[controller]/pay")]
+        public async ValueTask<ActionResult> Pay([FromBody]Order order)
+        {
+            try
+            {
+                orderRepository.Pay(order);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        [HttpPost]
+        [Route("api/[controller]/payhook")]
+        public async ValueTask<ActionResult> PayHook([FromBody]Payment payment)
+        {
+            try
+            {
+                Order order = await orderRepository.PaymentHook(payment);
                 return Ok(order);
             }
             catch (Exception e)

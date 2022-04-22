@@ -16,15 +16,14 @@ namespace KBR.Domain.Infra.Repositorys
             db = _db;
         }
 
-        public async ValueTask<Payment> Pay(Order order)
+        public async ValueTask Pay(Order order)
         {
             Payment payment = new Payment();
-            payment.order = order;
-            payment.status = "Pago";
+            payment.orderId = order.Id;
+            payment.status = 1;
             db.payments.Add(payment);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
             Thread.Sleep(500);
-            return payment;
         }
     }
 }

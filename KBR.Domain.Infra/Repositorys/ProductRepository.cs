@@ -1,5 +1,4 @@
 ﻿using KBR.Domain.Entities;
-using KBR.Domain.Infra;
 
 namespace KBR.Domain.Infra.Repositorys
 {

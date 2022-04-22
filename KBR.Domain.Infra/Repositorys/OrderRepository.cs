@@ -8,7 +8,7 @@ namespace KBR.Domain.Infra.Repositorys
     public class OrderRepository
     {
         private readonly dbContext db;
-        private readonly RestClient client = new RestClient("");
+        private readonly RestClient client = new RestClient("https://localhost:7265");
 
         public OrderRepository(dbContext _db)
         {
@@ -17,24 +17,24 @@ namespace KBR.Domain.Infra.Repositorys
 
         public async ValueTask<Order> GetLastOrCreate() 
         {
-            Order order = new Order();
-            if (db.orders.Any(i => i.paid == false))
+            Order order = db.orders.FirstOrDefault(i => i.statusId == db.orderStatus.First(i => i.order == 1).Id);
+            if (order != null)
             {
-                order = db.orders.First(i => i.paid == false);
                 order.items = db.orderItems.ToList();
-            } 
+            }
             else
             {
-                order.status = await db.orderStatus.FirstAsync(i => i.order == 1);
+                order = new Order();
+                order.statusId = db.orderStatus.First(i => i.order == 1).Id;
                 db.orders.Add(order);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             return order;
         }
 
-        public async ValueTask<List<Order>> GetAll()
+        public List<Order> GetAll()
         {
-            return db.orders.ToList();
+            return db.orders.Where(i => i.items.Count > 0).ToList();
         }
 
         public async ValueTask<Order> AddItem(OrderItem item)
@@ -72,30 +72,36 @@ namespace KBR.Domain.Infra.Repositorys
 
         public async ValueTask<Order> Checkout(Order order)
         {
-            if(order.items.Count == 0) return null;
-            order.status = await db.orderStatus.FirstAsync(i => i.order == 2);
+            order = db.orders.First(i => i.Id == order.Id);
+            order.items = db.orderItems.ToList();
+            if (order.items.Count == 0) return null;
+            order.statusId = (await db.orderStatus.FirstAsync(i => i.order == 2)).Id;
             await db.SaveChangesAsync();
             return order;
         }
 
         public async void Pay(Order order)
         {
-            if (order.items.Count != 0) 
+            order = db.orders.First(i => i.Id == order.Id);
+            order.items = db.orderItems.ToList();
+            if (order.items.Count != 0 && order.statusId == db.orderStatus.First(i => i.order == 2).Id) 
             {
-                order.status = await db.orderStatus.FirstAsync(i => i.order == 3);
-                await db.SaveChangesAsync();
-                var request = new RestRequest("/payment", Method.Post);
+                order.statusId = db.orderStatus.First(i => i.order == 3).Id;
+                db.SaveChanges();
+                var request = new RestRequest("/payments");
                 request.AddJsonBody(JsonConvert.SerializeObject(order));
-                client.ExecuteAsync(request);
+                request.AddHeader("Accept", "*/*");
+                client.ExecutePostAsync(request);
             }
         }
 
         public async ValueTask<Order> PaymentHook(Payment payment)
         {
-            if (payment.status != "Paid") return null;
-            payment.order.status = await db.orderStatus.FirstAsync(i => i.order == 4);
+            if (payment.status != 1) return null;
+            Order order = await db.orders.FirstAsync(i => i.Id == payment.orderId);
+            order.statusId = db.orderStatus.First(i => i.order == 4).Id;
             await db.SaveChangesAsync();
-            return payment.order;
+            return order;
         }
     }
 }

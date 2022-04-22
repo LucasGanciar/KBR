@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,8 @@ namespace KBR.Domain.Entities
     {
         public List<OrderItem>? items { get; set; }
         public double value { get; set; }
-        public bool paid { get; set; }
-        public OrderStatus? status { get; set; }
+
+        [ForeignKey("OrderStatus")]
+        public Guid statusId { get; set; }
     }
 }

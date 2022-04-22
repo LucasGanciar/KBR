@@ -20,8 +20,8 @@ namespace KBR.Payment.Api.Controllers
         {
             try
             {
-                Domain.Entities.Payment payment = await paymentRepository.Pay(order);
-                return Ok(payment);
+                await paymentRepository.Pay(order);
+                return Ok();
             }
             catch (Exception e)
             {

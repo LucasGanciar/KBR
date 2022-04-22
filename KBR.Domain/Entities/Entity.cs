@@ -8,9 +8,9 @@ namespace KBR.Domain.Entities
 {
     public abstract class Entity :IEquatable<Entity>
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
-        public DateTime Created { get; private set; }
+        public DateTime Created { get; set; }
 
         public Entity()
         {
